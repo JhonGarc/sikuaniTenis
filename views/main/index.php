@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="panel">
-        <h1 class = "text-center" >SISTEMA DE ADMINISTRADOR</h1>
-        <!--contenido  -->
+    <?php 
+        require 'views/header.php';
+    ?>
+        <div id = "main">
+            <h1 class = "center">Bienvenido al sitio</h1>
+        </div>
 
-        <!-- /contenido-->
-    </div>
+    <?php
+
+        require 'views/footer.php';
+    ?>
+
 </body>
 </html>
