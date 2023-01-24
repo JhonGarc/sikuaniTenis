@@ -22,7 +22,7 @@ class Database{
     function connect(){
         try {
             $dbconn = pg_connect("host=$this->host dbname=$this->db user=$this->user password=$this->password");
-            echo "conexion sucefull";
+            echo "hi";
             pg_close($dbconn);
         } catch (\Exception $e) {
             echo "Error: " . $e->getMessage();
@@ -30,7 +30,4 @@ class Database{
 
     }
 }
-
-$db = new Database();
-$db->connect();
 ?>

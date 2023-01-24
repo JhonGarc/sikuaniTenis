@@ -7,16 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <?php 
-        require 'views/header.php';
-    ?>
-        <div id = "main">
-            <h1 class = "center">Posiciones</h1>
-        </div>
-    <?php
-
-        require 'views/footer.php';
-    ?>
-    
+    <h1>admin</h1>
 </body>
 </html>
