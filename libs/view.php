@@ -2,6 +2,12 @@
     //clases bases de las cuales van a heredar los controllers
     class View{
         public $mensaje;
+        public $tenistas;
+        public $encuentros;
+        public $contratos;
+        public $sanciones;
+        public $login;
+        public $tenista;
         function __construct()
         {
             //echo "<p> vista base </p>";

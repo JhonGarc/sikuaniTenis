@@ -23,12 +23,12 @@
               <p class="text-white-50 mb-5">Please enter your user and password!</p>
 
               <div class="form-outline form-white mb-4">
-                <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+                <input type="text" name="username" id="typeEmailX" class="form-control form-control-lg" />
                 <label class="form-label" for="typeEmailX">User</label>
               </div>
 
               <div class="form-outline form-white mb-4">
-                <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+                <input type="password" name="password"  id="typePasswordX" class="form-control form-control-lg" />
                 <label class="form-label" for="typePasswordX">Password</label>
               </div>
 

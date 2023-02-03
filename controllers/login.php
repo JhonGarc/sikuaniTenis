@@ -1,14 +1,15 @@
 <?php
-
-class Login extends Controller{
-
-    function __construct(){
+class Contratos extends Controller{
+    function __construct()
+    {
         parent::__construct();
-        $this->view->render('login/index');
+        $this->view->login;
     }
 
-    function saludo(){
-        echo "<p>Ejecutaste el método Saludo</p>";
+    function render(){
+        $login =  $this->model->get();
+        $this->view->contratos = $contratos;
+        $this->view->render('contratos/index');
     }
 }
 

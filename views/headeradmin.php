@@ -12,6 +12,7 @@
         <ul>
             <li><a href="<?php echo constant('URL'); ?>administrador">Inicio</a></li>
             <li><a href="<?php echo constant('URL'); ?>llaves">Encuentros</a></li>
+            <li><a href="<?php echo constant('URL'); ?>tenistasAdmin">Tenistas</a></li>
         </ul>
 
 

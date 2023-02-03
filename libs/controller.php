@@ -3,6 +3,7 @@
     class Controller{
         public $view;
         public $model;
+        
         function __construct()
         {
             //echo "<p> Controlador base </p> ";

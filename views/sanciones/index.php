@@ -10,9 +10,34 @@
     <?php 
         require 'views/header.php';
     ?>
-        <div id = "main">
-            <h1 class = "center">Sanciones</h1>
-        </div>
+       
+            <h1 class = "center">Multas</h1>
+            <table width="100%">
+        <thead>
+            <tr>
+                <th>ID TENISTA</th>
+                <th>ID SANCION</th>
+                <th>ID ENCUENTRO</th>
+                <th>MINUTO FALTA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            include_once 'models/sancion.php';
+            foreach ($this->sanciones as $row) {
+                $sancion = new Sancion();
+                $sancion = $row;
+            ?>
+                <tr>
+                    <td><?php echo $sancion->id_tenista ?></td>
+                    <td><?php echo $sancion->id_sancion ?></td>
+                    <td><?php echo $sancion->id_encuentro ?></td>
+                    <td><?php echo $sancion->minuto_falta ?></td>
+                </tr>
+            <?php } ?>
+        </tbody>
+        </table>
+    
     <?php
 
         require 'views/footer.php';
