@@ -12,14 +12,15 @@ include_once 'models/contrato.php';
        $items = []; 
 
     try {
-        $query = $this->db->connect()->query("SELECT * FROM contrato");
+        $query = $this->db->connect()->query("SELECT * FROM usercontratos");
 
         while($row = $query->fetch()){
             $item = new Contrato();
-            $item->id_patro = $row['id_patro'];
-            $item->id_tenista = $row['id_tenista'];
-            $item->fech_ini = $row['fech_ini'];
-            $item->fech_fin = $row['fech_fin'];
+            $item->n = $row['n'];
+            $item->tenista = $row['tenista'];
+            $item->patrocinador = $row['patrocinador'];
+            $item->firma_contrato = $row['firma_contrato'];
+            $item->finalizacion = $row['finalizacion'];
             array_push($items, $item);
         }
         return $items;

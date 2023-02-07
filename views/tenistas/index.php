@@ -12,8 +12,8 @@
     ?>
        
             <h1 class = "center">Tenistas</h1>
-            <table width="100%">
-        <thead>
+            <table width="100%"class="table table-hover table-bordered table-round-corner" style="border: 2px solid #bce4b8;border-radius:40px; background-color: gray;">
+        <thead class="table-dark">
             <tr>
                 <th>NOMBRES</th>
                 <th>APELLIDOS</th>
@@ -38,9 +38,6 @@
         </tbody>
         </table>
     
-    <?php
 
-        require 'views/footer.php';
-    ?>
 </body>
 </html>

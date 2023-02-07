@@ -1,8 +1,10 @@
 <?php
-class Prueba extends Controller{
-    function __construct()
-    {
+
+class Xd extends Controller{
+
+    function __construct(){
         parent::__construct();
+        
     }
 
     function render(){

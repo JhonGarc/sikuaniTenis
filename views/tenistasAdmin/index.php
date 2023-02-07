@@ -16,8 +16,8 @@
     <div id="">
         <h1 class="center">tenistas</h1>
 
-        <table width="100%">
-        <thead>
+        <table width="100%"class="table table-hover table-bordered table-round-corner" style="border: 2px solid #bce4b8;border-radius:40px; background-color: gray;">
+        <thead class="table-dark">
             <tr>
                 <th>ID TENISTA</th>
                 <th>ID ENTRENADOR</th>

@@ -80,3 +80,7 @@ JOIN tenistas t3 ON e.id_tenista = t3.id_tenista
 JOIN canchas c ON e.id_cancha = c.id_cancha
 JOIN puntuacion p1 ON e.id_encuentro = p1.id_encuentro and t1.id_tenista = p1.id_tenista
 JOIN puntuacion p2 ON e.id_encuentro = p2.id_encuentro and t2.id_tenista = p2.id_tenista;
+
+
+
+update tenistas set nombres = "Luis" where nombres = "Juan"; 

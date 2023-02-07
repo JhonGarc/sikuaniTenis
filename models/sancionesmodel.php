@@ -12,14 +12,16 @@ include_once 'models/sancion.php';
        $items = []; 
 
     try {
-        $query = $this->db->connect()->query("SELECT * FROM multa");
+        $query = $this->db->connect()->query("SELECT * FROM usersanciones");
 
         while($row = $query->fetch()){
             $item = new Sancion();
-            $item->id_tenista = $row['id_tenista'];
-            $item->id_sancion = $row['id_sancion'];
-            $item->id_encuentro = $row['id_encuentro'];
-            $item->minuto_falta = $row['minuto_falta'];
+            $item->n = $row['n'];
+            $item->tenista = $row['tenista'];
+            $item->fase = $row['fase'];
+            $item->fecha = $row['fecha'];
+            $item->minuto = $row['minuto'];
+            $item->sancion = $row['sancion'];
             array_push($items, $item);
         }
         return $items;
@@ -30,4 +32,3 @@ include_once 'models/sancion.php';
 
 
  }
-

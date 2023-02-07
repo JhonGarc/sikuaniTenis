@@ -18,7 +18,8 @@
             <li><a href="<?php echo constant('URL'); ?>contratos">Contratos</a></li>
             <li><a href="<?php echo constant('URL'); ?>sanciones">Sanciones</a></li>
             <li><a href="<?php echo constant('URL'); ?>estadisticas">Estadisticas</a></li>
-            <li><a href="<?php echo constant('URL'); ?>prueba">Prueba</a></li>
+            <li><a href="<?php echo constant('URL'); ?>xd">Administrador</a></li>
+
         </ul>
     </div>
 </body>

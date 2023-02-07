@@ -12,13 +12,14 @@
     ?>
        
             <h1 class = "center">Contratos</h1>
-            <table width="100%">
-        <thead>
+            <table width="100%" class="table table-hover table-bordered table-round-corner" style="border: 2px solid #bce4b8;border-radius:40px; background-color: gray;">
+        <thead class="table-dark">
             <tr>
-                <th>Patrocinador</th>
+                <th>N</th>
                 <th>Tenista</th>
-                <th>fecha inicio</th>
-                <th>fecha fin</th>     
+                <th>Patrocinador</th>
+                <th>Firma de contrato</th>
+                <th>Finalizacion</th>     
             </tr>
         </thead>
         <tbody>
@@ -29,10 +30,11 @@
                 $contrato = $row;
             ?>
                 <tr>
-                    <td><?php echo $contrato->id_patro ?></td>
-                    <td><?php echo $contrato-> id_tenista ?></td>
-                    <td><?php echo $contrato->fech_ini ?></td>
-                    <td><?php echo $contrato->fech_fin ?></td>
+                    <td><?php echo $contrato->n ?></td>
+                    <td><?php echo $contrato->tenista ?></td>
+                    <td><?php echo $contrato->patrocinador ?></td>
+                    <td><?php echo $contrato->firma_contrato ?></td>
+                    <td><?php echo $contrato->finalizacion ?></td>
                 </tr>
             <?php } ?>
         </tbody>

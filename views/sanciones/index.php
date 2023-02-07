@@ -11,14 +11,16 @@
         require 'views/header.php';
     ?>
        
-            <h1 class = "center">Multas</h1>
-            <table width="100%">
-        <thead>
+            <h1 class = "center" width= "100%">MULTAS</h1>
+            <table width="100%"class="table table-hover table-bordered table-round-corner" style="border: 2px solid #bce4b8;border-radius:40px; background-color: gray;">
+        <thead class="table-dark">
             <tr>
-                <th>ID TENISTA</th>
-                <th>ID SANCION</th>
-                <th>ID ENCUENTRO</th>
-                <th>MINUTO FALTA</th>
+                <th>N</th>
+                <th>TENISTA</th>
+                <th>FASE</th>
+                <th>FECHA</th>
+                <th>MINUTO</th>
+                <th>SANCION</th>
             </tr>
         </thead>
         <tbody>
@@ -29,10 +31,12 @@
                 $sancion = $row;
             ?>
                 <tr>
-                    <td><?php echo $sancion->id_tenista ?></td>
-                    <td><?php echo $sancion->id_sancion ?></td>
-                    <td><?php echo $sancion->id_encuentro ?></td>
-                    <td><?php echo $sancion->minuto_falta ?></td>
+                    <td><?php echo $sancion->n ?></td>
+                    <td><?php echo $sancion->tenista ?></td>
+                    <td><?php echo $sancion->fase ?></td>
+                    <td><?php echo $sancion->fecha ?></td>
+                    <td><?php echo $sancion->minuto ?></td>
+                    <td><?php echo $sancion->sancion ?></td>
                 </tr>
             <?php } ?>
         </tbody>

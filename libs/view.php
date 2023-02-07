@@ -6,8 +6,9 @@
         public $encuentros;
         public $contratos;
         public $sanciones;
-        public $login;
         public $tenista;
+        public $posiciones;
+        
         function __construct()
         {
             //echo "<p> vista base </p>";
