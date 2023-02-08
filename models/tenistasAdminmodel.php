@@ -34,6 +34,10 @@ class TenistasAdminModel extends Model
         }
     }
 
+    public function tenistaJoven(){
+
+    }
+
     public function getById($id_tenista)
     {
         $item = new Tenista();
@@ -55,20 +59,37 @@ class TenistasAdminModel extends Model
 
     public function update($item)
     {   
-        $query = $this->db->connect()->prepare("UPDATE tenistas WHERE id_tenista= :id_tenista SET nombres = :nombres, apellidos = :apellidos");
         
+      
+        $query = $this->db->connect()->prepare("UPDATE tenistas SET nombres = :nombres, apellidos = :apellidos WHERE id_tenista = :id_tenista");
+            
         try {
-
-            $query->execute([
-                'nombres' => $item['nombres'],
-                'apellidos' => $item['apellidos'],
-
-
-            ]);
+            
+            $query->bindValue(':nombres', $item['nombres'], PDO::PARAM_STR);
+            $query->bindValue(':apellidos', $item['apellidos'], PDO::PARAM_STR);
+            $query->bindValue(':id_tenista', $item['id_tenista'], PDO::PARAM_INT);
+            $query->execute();
             return true;
         } catch (PDOException $e) {
             return false;
         }
     }
 
+    public function delete($id_tenista){
+         $query = $this->db->connect()->prepare("DELETE from tenistas where id_tenista =:id_tenista");
+         try {
+           $query->execute([
+                'id_tenista' => $id_tenista,
+             ]);
+             return true;
+         } catch (PDOException $e) {
+            return false;
+         }
+
+       // var_dump($id_tenista);
+    }
+
+    
+
+    
 }
