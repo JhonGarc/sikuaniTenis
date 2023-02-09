@@ -38,6 +38,36 @@ include_once 'models/estadistica.php';
     }
 }
 
+public function tenistajoven(){
+    $items = []; 
+
+ try {
+     $query = $this->db->connect()->query("SELECT row_number() OVER (ORDER BY sum(cast(set as integer)) DESC) AS puesto, 
+     concat(nombres, ' ', apellidos) AS tenista, date_part('year', age(fecha_nacimiento)) AS edad, sum(cast(set as integer)) as puntuacion_total
+     FROM tenistas t
+     JOIN puntuacion p ON t.id_tenista = p.id_tenista
+     GROUP BY nombres, apellidos, edad, fecha_nacimiento;");
+
+
+
+
+     
+     while($row = $query->fetch()){
+         $item = new Estadistica();
+         $item->ranking = $row['ranking'];
+         $item->nomb_ciudad = $row['nomb_ciudad'];
+         $item->cantidad_tenistas = $row['cantidad_tenistas'];
+
+         
+
+         array_push($items, $item);
+     }
+     return $items;
+ } catch (PDOException $e) {
+     return [];
+ }
+}
+
 
  }
 

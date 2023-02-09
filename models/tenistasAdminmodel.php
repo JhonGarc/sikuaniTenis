@@ -48,7 +48,8 @@ class TenistasAdminModel extends Model
                 $item->id_tenista = $row['id_tenista'];
                 $item->nombres = $row['nombres'];
                 $item->apellidos = $row['apellidos'];
-                
+               
+               
                
             }
             return $item;
@@ -58,16 +59,14 @@ class TenistasAdminModel extends Model
     }
 
     public function update($item)
-    {   
-        
-      
+    {    
         $query = $this->db->connect()->prepare("UPDATE tenistas SET nombres = :nombres, apellidos = :apellidos WHERE id_tenista = :id_tenista");
-            
+    
         try {
-            
+            $query->bindValue(':id_tenista', $item['id_tenista'], PDO::PARAM_INT);
             $query->bindValue(':nombres', $item['nombres'], PDO::PARAM_STR);
             $query->bindValue(':apellidos', $item['apellidos'], PDO::PARAM_STR);
-            $query->bindValue(':id_tenista', $item['id_tenista'], PDO::PARAM_INT);
+
             $query->execute();
             return true;
         } catch (PDOException $e) {

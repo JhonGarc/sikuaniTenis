@@ -39,8 +39,6 @@ class App
                         array_push($param , $url[$i]);
                     }
                     $controller->{$url[1]}($param);
-                }else{
-                    $controller->{$url[1]}();
                 }
             }else{
                 $controller->render();

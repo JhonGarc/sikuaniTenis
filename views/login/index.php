@@ -9,7 +9,7 @@
   <title>Document</title>
 </head>
 
-<body>
+<body style ="background-color: #abb8c4;">
   <section class="vh-100 gradient-custom">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -17,9 +17,9 @@
           <div class="card bg-dark text-white" style="border-radius: 1rem;">
             <div class="card-body p-5 text-center">
 
-              <form action="<?php echo constant('URL'); ?>xd/login" method="POST" class="mb-md-5 mt-md-4 pb-5" >
+              <form action="<?php echo constant('URL'); ?>login/logind" method="POST" class="mb-md-5 mt-md-4 pb-5" >
 
-                <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                <h2 class="fw-bold mb-2 text-uppercase" >Login</h2>
                 <p class="text-white-50 mb-5">Please enter your user and password!</p>
 
                 <div class="form-outline form-white mb-4">

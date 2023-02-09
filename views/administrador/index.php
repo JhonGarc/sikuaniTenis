@@ -14,7 +14,7 @@
     require 'views/headeradmin.php';
     ?>
     <div id="main">
-        <h1 class="center">Administrador</h1>
+        <h1 class="center">Administrador - TENISTAS</h1>
         <div class = "center"><?php echo $this->mensaje; ?></div>
         <form action="<?php echo constant('URL'); ?>administrador/crearTenista" method="POST">
             <P>
@@ -43,7 +43,7 @@
             <P>
                 <label for="identificacion">Identificacion</label><br>
                 <input type="text" name="identificacion" id="" required>
-            </P>
+            </P>    
             <P>
                 <label for="fecha_nacimiento">fecha Nacimiento</label><br>
                 <input type="date" name="fecha_nacimiento" id="" required>

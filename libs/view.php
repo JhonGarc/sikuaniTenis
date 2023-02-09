@@ -8,6 +8,10 @@
         public $sanciones;
         public $tenista;
         public $posiciones;
+        public $login;
+        public $entrenadores;
+        public $estadisticas;
+        public $tenistasjoven;
         
         function __construct()
         {

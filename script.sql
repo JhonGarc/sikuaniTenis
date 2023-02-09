@@ -84,3 +84,52 @@ JOIN puntuacion p2 ON e.id_encuentro = p2.id_encuentro and t2.id_tenista = p2.id
 
 
 update tenistas set nombres = "Luis" where nombres = "Juan"; 
+
+
+
+SELECT ROW_NUMBER() OVER (ORDER BY COUNT(t.id_tenista) DESC) AS ranking, c.nomb_ciudad,
+COUNT(t.id_tenista) AS cantidad_tenistas
+FROM ciudades c
+JOIN tenistas t ON c.id_ciudad = t.id_ciudad
+GROUP BY c.nomb_ciudad
+ORDER BY cantidad_tenistas DESC;
+
+
+
+
+//mayor ganador
+
+create view mayorganador as
+SELECT row_number() OVER (ORDER BY SUM(CASE WHEN t.id_tenista = e.id_tenista THEN 1 ELSE 0 END) DESC) as ranking,
+       concat(t.nombres, ' ', t.apellidos) AS tenista,
+       t.identificacion,
+       SUM(CASE WHEN t.id_tenista = e.id_tenista THEN 1 ELSE 0 END) as victorias
+FROM tenistas t
+LEFT JOIN encuentros e
+  ON t.id_tenista = e.ten_id_tenista OR t.id_tenista = e.ten_id_tenista2
+GROUP BY t.id_tenista, tenista, t.identificacion;
+
+
+//jugador mas sancionado
+
+
+SELECT row_number() OVER (ORDER BY count(m.id_tenista) DESC) AS puesto,
+       concat(t.nombres, ' ', t.apellidos) AS tenista, COUNT(s.nomb_sancion) AS cantidad_sanciones
+FROM tenistas t
+LEFT JOIN multa m ON t.id_tenista = m.id_tenista
+LEFT JOIN sanciones s ON m.id_sancion = s.id_sancion
+GROUP BY tenista
+ORDER BY cantidad_sanciones DESC;
+
+
+//mayor puntuacion tenista
+create view mayorpuntuaciontenista as
+SELECT row_number() OVER (ORDER BY sum(cast(set as integer)) DESC) AS puesto, 
+concat(nombres, ' ', apellidos) AS tenista, date_part('year', age(fecha_nacimiento)) AS edad, sum(cast(set as integer)) as puntuacion_total
+FROM tenistas t
+JOIN puntuacion p ON t.id_tenista = p.id_tenista
+GROUP BY nombres, apellidos, edad, fecha_nacimiento;
+
+
+
+create view

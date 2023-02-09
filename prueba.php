@@ -1,15 +1,15 @@
-*{
+{
     padding: 0;
     margin: 0;
 }
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #eee;
+    background-color: #d7e1eb;
 }
 
 #header{
-    background: black;
+    background: #8090a0;
     padding: 10px;
 }
 
@@ -40,3 +40,6 @@ body{
     text-align: center
 }
 
+
+<table width="100%"class="table table-hover table-bordered table-round-corner" style="border: 2px solid #d7e1eb;border-radius:40px; background-color: #cab5ad;">
+        <thead style= "background-color: #a98e83;">

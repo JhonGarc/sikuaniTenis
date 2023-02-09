@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title></title>
-    <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/default.css">
+    <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/defaul.css">
 </head>
 <body>
     <div id="header">
@@ -18,7 +18,7 @@
             <li><a href="<?php echo constant('URL'); ?>contratos">Contratos</a></li>
             <li><a href="<?php echo constant('URL'); ?>sanciones">Sanciones</a></li>
             <li><a href="<?php echo constant('URL'); ?>estadisticas">Estadisticas</a></li>
-            <li><a href="<?php echo constant('URL'); ?>xd">Administrador</a></li>
+            <li><a href="<?php echo constant('URL'); ?>login">Administrador</a></li>
 
         </ul>
     </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -17,6 +17,11 @@
         <h1 class="center">Detalle de <?php echo $this->tenista->fecha_nacimiento?></h1>
         <div class = "center"><?php echo $this->mensaje; ?></div>
         <form action="<?php echo constant('URL'); ?>tenistasAdmin/actualizarTenista" method="POST">
+        
+            <P>
+                <label for="nombres">nombres</label><br>
+                <input type="hidden" name="nombres" value = "<?php echo $this->tenista->nombres?>" required>
+            </P>
             <P>
                 <label for="nombres">nombres</label><br>
                 <input type="text" name="nombres" value = "<?php echo $this->tenista->nombres?>" required>
